@@ -73,13 +73,16 @@ fiftyButton.addEventListener('click', useFiftyFifty);
 skipButton.addEventListener('click', useSkip);
 
 function checkAnswer(selectedAnswer) {
+    const moneySound = document.getElementById('money-sound');
+  
     if (selectedAnswer === correctAnswer) {
-      // Code to mark the answer as correct
-      showCorrectMessage();  // Or trigger the next question
+      moneySound.currentTime = 0; 
+      moneySound.play(); 
+      showCorrectMessage();
     } else {
-      showIncorrectMessage();  // Or trigger the game over state
+      showIncorrectMessage();
     }
-  }
+}
 
 
 function startGame() {
@@ -114,7 +117,7 @@ function loadNextQuestion() {
 
 function nextQuestion() {
     currentQuestionIndex++;
-    loadQuestion(currentQuestionIndex);  // Or however you're loading the next question
+    loadQuestion(currentQuestionIndex); 
   }
 
 function resetState() {
