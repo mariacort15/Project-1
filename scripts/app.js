@@ -82,7 +82,7 @@ function checkAnswer(selectedAnswer) {
     } else {
       showIncorrectMessage();
     }
-  }
+}
 
 
 function startGame() {
